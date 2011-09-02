@@ -5,6 +5,24 @@ Normalize.css is a customisable CSS file that makes browsers render all elements
 
 [Check out the demo](http://necolas.github.com/normalize.css/demo.html)
 
+Why *.sass?
+-----------
+
+* All possible variables are defined on top of the file, making them easy to spot and edit
+* Maintain only the .sass file and compile to css (expanded and minified)
+* Syntax similar to css, with benefits from sass (variables, calculations, mixins, ...)
+
+How to compile the ".sass" file
+-----------
+
+Install compass: http://compass-style.org/install/
+
+Then:
+
+sass -t compressed normalize.sass css/normalize_compressed.css
+
+sass -t expanded normalize.sass css/normalize.css
+
 What does it do?
 -----------
 
