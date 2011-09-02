@@ -1,3 +1,38 @@
+// =============================================================================
+// Configuration variables
+// ==========================================================================
+
+// Base
+$normalize_form_font: sans-serif !default
+
+// Links
+$normalize_link_color: #00e !default
+$normalize_link_visited_color: #551a8b !default
+
+// Typography
+$normalize_blockquote_margin: 1em 40px !default
+$normalize_mark_background: #ff0 !default
+$normalize_mark_color: #000 !default
+$normalize_font_mono: monospace, monospace !default
+$normalize_font_mono_ie: 'courier new', monospace !default
+$normalize_font_small_size: 75% !default
+
+// Lists
+$normalize_list_margin: 1em 0 !default
+$normalize_list_padding: 0 0 0 40px !default
+$normalize_dd_margin: 0 0 0 40px !default
+
+// Figures
+$normalize_figure_margin: 0 !default
+
+// Forms
+$normalize_form_margin: 0 !default
+$normalize_fieldset_margin: 0 2px !default
+$normalize_fieldset_padding: 0.35em 0.625em 0.75em !default
+
+// Tables
+$normalize_table_border_spacing: 0 !default
+
 /* =============================================================================
  * HTML5 display definitions
  * ==========================================================================
@@ -52,7 +87,7 @@ body
 /* Addresses font-family inconsistency between <textarea> and other form elements. */
 
 body, button, input, select, textarea
-  font-family: sans-serif
+  font-family: $normalize_form_font
 
 
 /* =============================================================================
@@ -60,15 +95,19 @@ body, button, input, select, textarea
  * ========================================================================== */
 
 a
-  color: #00e
+  color: $normalize_link_color
   &:visited
-    color: #551a8b
-  
-  /* Addresses outline displayed oddly in Chrome */
+    color: $normalize_link_visited_color
+
+/* Addresses outline displayed oddly in Chrome */
+
+a
   &:focus
     outline: thin dotted
-  /* Improves readability when focused and also mouse hovered in all browsers
-   * people.opera.com/patrickl/experiments/keyboard/test */
+
+/* Improves readability when focused and also mouse hovered in all browsers
+ * people.opera.com/patrickl/experiments/keyboard/test */
+a
   &:hover, &:active
     outline: 0
 
@@ -87,7 +126,7 @@ b, strong
   font-weight: bold
 
 blockquote
-  margin: 1em 40px
+  margin: $normalize_blockquote_margin
 
 /* Addresses styling not present in S5, Chrome */
 
@@ -95,16 +134,17 @@ dfn
   font-style: italic
 
 /* Addresses styling not present in IE6/7/8/9 */
+
 mark
-  background: #ff0
-  color: #000
+  background: $normalize_mark_background
+  color: $normalize_mark_color
 
 /* Corrects font family set oddly in IE6, S4/5, Chrome
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59 */
-
+ 
 pre, code, kbd, samp
-  font-family: monospace, monospace
-  _font-family: 'courier new', monospace
+  font-family: $normalize_font_mono
+  _font-family: $normalize_font_mono_ie
   font-size: 1em
 
 /* Improves readability of pre-formatted text in all browsers */
@@ -127,19 +167,19 @@ q
     content: ''
     content: none
 small
-  font-size: 75%
+  font-size: $normalize_font_small_size
 
 /* Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930 */
 
 sub
-  font-size: 75%
+  font-size: $normalize_font_small_size
   line-height: 0
   position: relative
   vertical-align: baseline
 
 sup
-  font-size: 75%
+  font-size: $normalize_font_small_size
   line-height: 0
   position: relative
   vertical-align: baseline
@@ -153,11 +193,11 @@ sub
  * ========================================================================== */
 
 ul, ol
-  margin: 1em 0
-  padding: 0 0 0 40px
+  margin: $normalize_list_margin
+  padding: $normalize_list_padding
 
 dd
-  margin: 0 0 0 40px
+  margin: $normalize_dd_margin
 
 nav
   ul, ol
@@ -190,7 +230,7 @@ svg:not(:root)
  * Addresses margin not present in IE6/7/8/9, S5, O11 */
 
 figure
-  margin: 0
+  margin: $normalize_figure_margin
 
 /* =============================================================================
  * Forms
@@ -199,13 +239,13 @@ figure
  * Corrects margin displayed oddly in IE6/7 */
 
 form
-  margin: 0
+  margin: $normalize_form_margin
 
 /* Define consistent margin and padding */
 
 fieldset
-  margin: 0 2px
-  padding: 0.35em 0.625em 0.75em
+  margin: $normalize_fieldset_margin
+  padding: $normalize_fieldset_padding
 
 /* 1. Corrects color not being inherited in IE6/7/8/9
  * 2. Corrects alignment displayed oddly in IE6/7 */
@@ -301,4 +341,4 @@ textarea
 
 table
   border-collapse: collapse
-  border-spacing: 0
+  border-spacing: $normalize_table_border_spacing
